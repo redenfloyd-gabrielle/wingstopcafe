@@ -1,0 +1,37 @@
+version: '3.1'
+
+services:
+  db:
+    image: mariadb
+    restart: always
+    volumes:
+      - wingstopcafe:/var/lib/mysql
+    environment:
+      TZ: Asia/Manila
+      MYSQL_ROOT_PASSWORD: wingstopcafe329
+      MYSQL_DATABASE: wingstopcafedb
+      MYSQL_USER: redenfloyd
+      MYSQL_PASSWORD: Redinkfluid23
+    ports:
+      - 3306:3306
+
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: redenfloyd/web2py:python3.7
+    restart: always
+    volumes:
+      - ./api:/opt/web2py/applications/wingstopcafe
+    ports:
+      - 8080:8080
+      - 9090:9090
+    environment:
+      - TZ=Asia/Manila
+      - WEB2PY_PASSWORD=wingstopcafe329
+      - WEB2PY_ADMIN_SECURITY_BYPASS=true
+    depends_on:
+      - db
+
+volumes:
+  wingstopcafe:
