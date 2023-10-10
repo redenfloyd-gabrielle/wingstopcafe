@@ -60,17 +60,21 @@ export const useProductStore = defineStore('product', () => {
     
   };
 
-  const getProductName = (uuid: string) => {
+  const getProductName = (uuid: string): string => {
     const product = products.value.find((prod) => prod.uuid === uuid);
     if(product){
       return product.name;
+    }else {
+      return '';
     }
   };
   
-  const getProductPrice = (uuid: string) => {
+  const getProductPrice = (uuid: string): number  => {
     const product = products.value.find((prod) => prod.uuid === uuid);
     if(product){
       return product.price;
+    } else {
+      return 0;
     }
   };
 

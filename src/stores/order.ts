@@ -36,7 +36,7 @@ export const useOrderStore = defineStore('order', () => {
   const cash = ref<number>(0);
   const change = ref<number>(0);
   const orderItems = ref<Array<IOrder_Item>>([]);
-  const currentOrder = ref({ is_discounted:false, items : [], total_amount : 0, discount_amount: 0} as IOrder);
+  const currentOrder = ref({ is_discounted: false, items: [], total_amount: 0, discount_amount: 0 } as IOrder);
   // currentOrder.value.items = [] as IOrder_Item;
 
 
@@ -137,7 +137,6 @@ export const useOrderStore = defineStore('order', () => {
       });
     }
   }
-
 
   const addCash = async (amount : number) => {
     cash.value += amount;
