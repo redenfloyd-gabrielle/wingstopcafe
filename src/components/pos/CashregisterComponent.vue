@@ -1,6 +1,6 @@
 <template>
   <div class="container-fluid p-0">
-    <div class="row">
+    <div class="row vh-90">
       <CartSidebar />
       <FoodMenu />
     </div>
