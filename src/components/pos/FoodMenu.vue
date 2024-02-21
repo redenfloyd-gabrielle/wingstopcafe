@@ -57,7 +57,7 @@
                     <p class="card-text">$ 50</p>
                     <div class="d-grid">
                       <button class="btn btn-primary btn-sm" href="#">
-                        <i class="align-middle" data-feather="plus-circle"></i>
+                        <i class="align-middle mdi mdi-plus-circle-outline mdi-18px"></i>
                         &nbsp;
                         <span class="align-middle">Add to cart</span>
                       </button>
